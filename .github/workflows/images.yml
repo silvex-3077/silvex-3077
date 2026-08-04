@@ -15,16 +15,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
 
-      - name: Generate stats card
-        uses: stats-organization/github-stats-extended-action@v1
-        with:
-          card: stats
-          options: username=${{ github.repository_owner }}&show_icons=true&count_private=true&theme=dracula
-          path: images/stats-silvex3077.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Generate top langs card
-        uses: stats-organization/github-stats-extended-action@v1
+        uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&show_icons=true&count_private=true&layout=compact&theme=dracula
